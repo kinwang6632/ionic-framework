@@ -1,37 +1,29 @@
 <template>
-  <h2>Memories Page</h2>
-  <ion-page>
-    <ion-header>
-      <ion-toolbar color="primary">
-        <ion-title>All Memories</ion-title>
-      </ion-toolbar>
-    </ion-header>
-    <ion-content>
-      <ion-list>
-        <ion-item>Max</ion-item>
-        <ion-item>Manuel</ion-item>
-        <ion-item>Julie</ion-item>
-        <ion-item>George</ion-item>
-      </ion-list>
-    </ion-content>
-  </ion-page>
+  <base-layout page-title="All Memories" pageDefaultBackLink="/memories">
+    <ion-list>
+      <ion-item
+        v-for="item in data"
+        :key="item.id"
+        router-link="/memories/{{item.id}}"
+        >{{ item.title }}</ion-item
+      >
+    </ion-list>
+  </base-layout>
 </template>
 
 <script setup lang="ts">
-import {
-  IonContent,
-  IonHeader,
-  IonToolbar,
-  IonPage,
-  IonTitle,
-  IonList,
-  IonItem,
-  
-} from "@ionic/vue";
+import { IonList, IonItem } from "@ionic/vue";
+import { ref } from "vue";
+const data = ref([
+  { id: 1, title: "Max" },
+  { id: 2, title: "Manuel" },
+  { id: 3, title: "Julie" },
+  { id: 4, title: "George" },
+]);
 </script>
 
 <style scoped>
-    ion-toolbar {
-        --background:red;
-    }
+ion-toolbar {
+  --background: red;
+}
 </style>

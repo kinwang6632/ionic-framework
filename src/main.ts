@@ -19,7 +19,7 @@ import '@ionic/vue/css/text-alignment.css';
 import '@ionic/vue/css/text-transformation.css';
 import '@ionic/vue/css/flex-utils.css';
 import '@ionic/vue/css/display.css';
-
+import BaseLayout from './components/BaseLayout.vue'
 /**
  * Ionic Dark Mode
  * -----------------------------------------------------
@@ -37,6 +37,7 @@ import './theme/variables.css';
 const app = createApp(App)
   .use(IonicVue)
   .use(router);
+app.component('base-layout', BaseLayout);
 
 router.isReady().then(() => {
   app.mount('#app');
