@@ -19,7 +19,7 @@ const data = ref([
   { id: 2, title: "Manuel" },
   { id: 3, title: "Julie" },
   { id: 4, title: "George" },
-]);
+]); 
 </script>
 
 <style scoped>
